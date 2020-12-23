@@ -1,0 +1,9 @@
+function [cosbasis, sinbasis] = fft_base( N )
+basis = zeros(N, N);
+for i=0:N-1
+    for j=0:N-1
+        basis(i+1,j+1) = cos(2*pi*i*j / N)
+
+
+end
+

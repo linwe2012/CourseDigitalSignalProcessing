@@ -1,0 +1,17 @@
+% kyh(:,:,1) = dct2(kyh(:,:,1));
+% kyh(:,:,2) = dct2(kyh(:,:,2));
+% kyh(:,:,3) = dct2(kyh(:,:,3));
+% kyh(200:end,300:end,:) = 0;
+% kyh(:,:,1) = idct2(kyh(:,:,1));
+% kyh(:,:,2) = idct2(kyh(:,:,2));
+% kyh(:,:,3) = idct2(kyh(:,:,3));
+kyh = rgb2ycbcr(ysy);
+for i=2:3
+    tmp = kyh(:,:,i);
+    tmp = tmp ./ (1+tmp);
+    tmp = tmp *2;
+    tmp = bfilter(tmp);
+    kyh(:,:,i) = tmp ./ (2 - tmp);
+    
+
+imshow(kyh);

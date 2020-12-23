@@ -1,0 +1,7 @@
+function basis = fft_base_complex( N )
+basis = zeros(N, N);
+for i=0:N
+
+
+end
+
